@@ -93,6 +93,7 @@ class Player extends GameObject{
     remove(){
         delete players[this.id];
         io.to(this.socketId).emit('dead');
+		console.log(`[Server] a player has died`);
     }
     toJSON(){
         return Object.assign(super.toJSON(), {health: this.health, maxHealth: this.maxHealth, socketId: this.socketId, point: this.point, nickname: this.nickname});
@@ -218,5 +219,5 @@ app.get('/', (request, response) => {
 
 const port = parseInt(yargs.port) || 3000;
 server.listen(port, () => {
-  console.log(`Starting server on port ${port}`);
+  console.log(`[Server] Done! Server starting on port ${port}`);
 });

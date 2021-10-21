@@ -115,7 +115,7 @@ class BotPlayer extends Player{
     constructor(obj){
         super(obj);
         this.timer = setInterval(() => {
-            if(! this.move(4)){
+            if(! this.move(4.5)){
                 this.angle = Math.random() * Math.PI * 2;
             }
             if(Math.random()<0.03){
@@ -149,8 +149,14 @@ for(let i=0; i<3; i++){
     walls[wall.id] = wall;
 }
 
-const bot = new BotPlayer({nickname: 'D.R.E.A.M'});
+//List of Game bots
+const bot = new BotPlayer({nickname: 'RoboCop'});
 players[bot.id] = bot;
+
+const bot1 = new BotPlayer({nickname: 'Carl-bot'});
+players[bot1.id] = bot1;
+
+
 
 io.on('connection', function(socket) {
     let player = null;

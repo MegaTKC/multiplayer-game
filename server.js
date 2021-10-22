@@ -132,6 +132,29 @@ class BotPlayer extends Player{
         }, 3000);
     }
 }
+
+class SBotPlayer extends Player{
+    constructor(obj){
+        super(obj);
+        this.timer = setInterval(() => {
+            if(! this.move(7.5)){
+                this.angle = Math.random() * Math.PI * 2;
+            }
+            if(Math.random()<0.03){
+                this.shoot();
+            }
+        }, 1000/30);
+    }
+    remove(){
+        super.remove();
+        clearInterval(this.timer);
+        setTimeout(() => {
+            const bot = new SBotPlayer({nickname: this.nickname});
+            players[bot.id] = bot;
+        }, 3000);
+    }
+}
+
 class Wall extends GameObject{
 }
 
@@ -165,7 +188,7 @@ players[bot3.id] = bot3;
 const bot4 = new BotPlayer({nickname: 'Poki'});
 players[bot4.id] = bot4;
 
-const bot5 = new BotPlayer({nickname: 'Mr. Barnett'});
+const bot5 = new SBotPlayer({nickname: 'Mr. Barnett'});
 players[bot5.id] = bot5;
 
 

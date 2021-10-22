@@ -165,6 +165,9 @@ players[bot3.id] = bot3;
 const bot4 = new BotPlayer({nickname: 'Poki'});
 players[bot4.id] = bot4;
 
+const bot5 = new BotPlayer({nickname: 'Mr. Barnett'});
+players[bot5.id] = bot5;
+
 
 
 io.on('connection', function(socket) {

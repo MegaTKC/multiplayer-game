@@ -19,6 +19,10 @@ $(document).on('keydown keyup', (event) => {
         'ArrowDown': 'back',
         'ArrowLeft': 'left',
         'ArrowRight': 'right',
+		'w': 'forward',
+		's': 'back',
+		'a': 'left',
+		'd': 'right',
     };
     const command = KeyToCommand[event.key];
     if(command){

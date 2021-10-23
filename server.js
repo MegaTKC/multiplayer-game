@@ -93,7 +93,7 @@ class Player extends GameObject{
     remove(){
         delete players[this.id];
         io.to(this.socketId).emit('dead');
-		console.log(`[Server] a player has died`);
+		console.log(`${process.uptime()} [Server] ${this.nickname} has died. Player user id: ${this.id}`);
     }
     toJSON(){
         return Object.assign(super.toJSON(), {health: this.health, maxHealth: this.maxHealth, socketId: this.socketId, point: this.point, nickname: this.nickname});
@@ -188,7 +188,7 @@ players[bot3.id] = bot3;
 const bot4 = new BotPlayer({nickname: 'Poki'});
 players[bot4.id] = bot4;
 
-const bot5 = new SBotPlayer({nickname: 'Mr. Barnett'});
+const bot5 = new SBotPlayer({nickname: 'Terminator'});
 players[bot5.id] = bot5;
 
 
@@ -260,5 +260,5 @@ app.get('/', (request, response) => {
 
 const port = parseInt(yargs.port) || 3000;
 server.listen(port, () => {
-  console.log(`[Server] Done! Server starting on port ${port}`);
+  console.log(`${process.uptime()} [Server] Done! Server starting on port ${port}`);
 });

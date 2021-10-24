@@ -10,10 +10,10 @@ const io = socketIO(server);
 const yargs = require('yargs').argv;
 
 
-const FIELD_WIDTH = 1000, FIELD_HEIGHT = 1000;
+const FIELD_WIDTH = 2000, FIELD_HEIGHT = 2000;
 class GameObject{
     constructor(obj={}){
-        this.id = Math.floor(Math.random()*1000000000);
+        this.id = Math.floor(Math.random()*2000000000);
         this.x = obj.x;
         this.y = obj.y;
         this.width = obj.width;
@@ -162,7 +162,7 @@ let players = {};
 let bullets = {};
 let walls = {};
 
-for(let i=0; i<3; i++){
+for(let i=0; i<5; i++){
     const wall = new Wall({
             x: Math.random() * FIELD_WIDTH,
             y: Math.random() * FIELD_HEIGHT,

@@ -12,15 +12,15 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 100, 1, 0.1, 2000 );
 
 // Floor
-const floorGeometry = new THREE.PlaneGeometry(1000, 1000, 1, 1);
+const floorGeometry = new THREE.PlaneGeometry(2000, 2000, 1, 1);
 const floorMaterial = new THREE.MeshLambertMaterial({color : 'lawngreen'});
 const floorMesh = new THREE.Mesh(floorGeometry, floorMaterial);
-floorMesh.position.set(500, 0, 500);
+floorMesh.position.set(1000, 0, 1000);
 floorMesh.receiveShadow = true;
 floorMesh.rotation.x = - Math.PI / 2; 
 scene.add(floorMesh);
 
-camera.position.set(1000, 300, 1000);
+camera.position.set(2000, 300, 1000);
 camera.lookAt(floorMesh.position);
 
 // Materials

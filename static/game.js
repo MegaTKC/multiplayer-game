@@ -96,9 +96,9 @@ socket.on('state', function(players, bullets, walls) {
         
         if(player.socketId === socket.id){
             context.save();
-            context.font = '30px Bold Arial';
+            context.font = '50px Sans Serif';
             context.fillText('You', player.x, player.y - 20);
-            context.fillText(player.point + ' point', 20, 40);
+            context.fillText(player.point + ' point', 30, 70);
             context.restore();
         }
     });

@@ -5,7 +5,7 @@ const canvas3d = $('#canvas-3d')[0];
 const playerImage = $("#player-image")[0];
 
 const renderer = new THREE.WebGLRenderer({canvas: canvas3d});
-renderer.setClearColor('skyblue');
+renderer.setClearColor('lightskyblue');
 renderer.shadowMap.enabled = true;
 
 const scene = new THREE.Scene();
@@ -13,7 +13,7 @@ const camera = new THREE.PerspectiveCamera( 100, 1, 0.1, 2000 );
 
 // Floor
 const floorGeometry = new THREE.PlaneGeometry(2000, 2000, 1, 1);
-const floorMaterial = new THREE.MeshLambertMaterial({color : 'lawngreen'});
+const floorMaterial = new THREE.MeshLambertMaterial({color : 'seagreen'});
 const floorMesh = new THREE.Mesh(floorGeometry, floorMaterial);
 floorMesh.position.set(1000, 0, 1000);
 floorMesh.receiveShadow = true;
@@ -25,7 +25,7 @@ camera.lookAt(floorMesh.position);
 
 // Materials
 const bulletMaterial = new THREE.MeshLambertMaterial( { color: 0x808080 } );
-const wallMaterial = new THREE.MeshLambertMaterial( { color: 'firebrick' } );
+const wallMaterial = new THREE.MeshLambertMaterial( { color: 'gray' } );
 const playerTexture = new THREE.Texture(playerImage);
 playerTexture.needsUpdate = true;
 const playerMaterial = new THREE.MeshLambertMaterial({map: playerTexture});
@@ -207,7 +207,7 @@ socket.on('state', (players, bullets, walls) => {
 			
 			// Write to 2D canvas
             context.clearRect(0, 0, canvas2d.width, canvas2d.height);
-            context.font = '30px Bold Arial';
+            context.font = '30px Sans Serif';
             context.fillText(player.point + ' point', 20, 40);
         }
     });

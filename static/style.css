@@ -18,3 +18,27 @@ button {
 	cursor: pointer;
 	font-size: 18px;
 }
+
+.button {
+  font-size: 15px;
+  padding: 5px 14px;
+}
+
+.button1 {
+  border-radius: 12px;
+}
+
+button a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+button a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+button a:link {
+  color: white;
+  text-decoration: none;
+}

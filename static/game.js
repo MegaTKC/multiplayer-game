@@ -98,7 +98,8 @@ socket.on('state', function(players, bullets, walls) {
             context.save();
             context.font = '50px Sans Serif';
             context.fillText('You', player.x, player.y - 20);
-            context.fillText(player.point + ' point', 30, 70);
+            context.fillText(' Points: ' + player.point, 9, 50);
+            context.fillText('Health: ' + player.health, 13, 110);
             context.restore();
         }
     });

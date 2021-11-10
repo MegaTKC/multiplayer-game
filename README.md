@@ -20,3 +20,5 @@ This project started off as a game for me and my friends to play with. We had lo
 ### Console Update (v0.0.1) - October 18, 2021
 - Initial Release
 
+## Crash Errors
+- Run `busybox reboot` to fix lag

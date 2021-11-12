@@ -9,7 +9,7 @@ renderer.setClearColor('lightskyblue');
 renderer.shadowMap.enabled = true;
 
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera( 100, 1, 0.1, 2000 );
+const camera = new THREE.PerspectiveCamera( 100, 2, 0.2, 4000 );
 
 // Floor
 const floorGeometry = new THREE.PlaneGeometry(2000, 2000, 1, 1);

@@ -71,7 +71,7 @@ class Player extends GameObject{
         }while(this.intersectWalls());
     }
     shoot(){
-        if(Object.keys(this.bullets).length >= 3){
+        if(Object.keys(this.bullets).length >= 10){
             return;
         }
         const bullet = new Bullet({
@@ -115,10 +115,10 @@ class BotPlayer extends Player{
     constructor(obj){
         super(obj);
         this.timer = setInterval(() => {
-            if(! this.move(4.5)){
+            if(! this.move(5)){
                 this.angle = Math.random() * Math.PI * 2;
             }
-            if(Math.random()<0.03){
+            if(Math.random()<0.04){
                 this.shoot();
             }
         }, 1000/30);
@@ -193,10 +193,10 @@ setInterval(() => {
     Object.values(players).forEach((player) => {
         const movement = player.movement;
         if(movement.forward){
-            player.move(5);
+            player.move(5.5);
         }
         if(movement.back){
-            player.move(-5);
+            player.move(-5.5);
         }
         if(movement.left){
             player.angle -= 0.1;
@@ -215,7 +215,7 @@ setInterval(() => {
                if(player !== bullet.player){
                    player.damage();
                    bullet.remove();
-                   bullet.player.point += 1;
+                   bullet.player.point +=1;
                }
            } 
         });
